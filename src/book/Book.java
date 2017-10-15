@@ -1,20 +1,45 @@
 package book;
 
 public class Book {
-    private String name;
+    private String title;
     private String author;
     private String publisher;
     private boolean isAllocated;
-    
-    public Book(String name , String author , String publisher){
-        this.name = name;
+    private int libraryId;
+    private int bookId;
+
+    public int getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(int bookId) {
+        this.bookId = bookId;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setAuthor(String author) {
         this.author = author;
+    }
+
+    public void setPublisher(String publisher) {
         this.publisher = publisher;
+    }
+
+    public void setIsAllocated(boolean isAllocated) {
         this.isAllocated = isAllocated;
     }
 
-    public String getName() {
-        return name;
+    public void setLibraryId(int libraryId) {
+        this.libraryId = libraryId;
+    }
+    
+    
+
+    public String getTitle() {
+        return title;
     }
 
     public String getAuthor() {
@@ -25,12 +50,16 @@ public class Book {
         return publisher;
     }
 
-    public boolean isIsAllocated() {
+    public boolean isAllocated() {
         return isAllocated;
+    }
+    
+    public int getLibraryId(){
+        return libraryId;
     }
     
     @Override
     public String toString(){
-        return String.format("%n%-20s%-20s%-20s%-20s%n", this.name , this.author , this.publisher , (this.isAllocated == true) ? "Allocated" : "Not allocated" );
+        return String.format("%n%-20s%-20s%-20s%-20s%n", this.title , this.author , this.publisher , (this.isAllocated == true) ? "Allocated" : "Not allocated" );
     }
 }
